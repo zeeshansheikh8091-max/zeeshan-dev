@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zeeshan Sheikh | Web Developer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Zeeshan Sheikh | Developer Portfolio</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
@@ -19,42 +18,29 @@
       line-height: 1.6;
     }
 
-    header {
-      background: rgba(30, 41, 59, 0.8);
-      backdrop-filter: blur(10px);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid #334155;
-    }
-
+    /* Navigation */
     nav {
-      max-width: 1100px;
-      margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 20px;
+      padding: 20px 8%;
+      background: #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     .logo {
-      font-size: 1.2rem;
-      font-weight: 700;
+      font-size: 22px;
+      font-weight: bold;
       color: #6366f1;
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      list-style: none;
     }
 
     .nav-links a {
       color: #94a3b8;
       text-decoration: none;
-      font-weight: 500;
+      margin-left: 20px;
       transition: 0.3s;
     }
 
@@ -62,17 +48,16 @@
       color: #6366f1;
     }
 
+    /* Hero Section */
     .hero {
-      max-width: 1100px;
-      margin: auto;
-      padding: 140px 20px 80px;
       text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
     }
 
     .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 15px;
+      font-size: 42px;
+      margin-bottom: 10px;
     }
 
     .hero h1 span {
@@ -80,20 +65,20 @@
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 18px;
       color: #94a3b8;
       max-width: 600px;
-      margin: 0 auto 30px;
+      margin: 0 auto 25px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 24px;
+      padding: 10px 24px;
       background: #6366f1;
       color: #fff;
-      border-radius: 8px;
       text-decoration: none;
-      font-weight: 600;
+      border-radius: 8px;
+      font-weight: bold;
       transition: 0.3s;
     }
 
@@ -101,46 +86,38 @@
       background: #4f46e5;
     }
 
+    /* Sections */
     section {
+      padding: 60px 8%;
       max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
+      margin: 0 auto;
     }
 
     .section-title {
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-size: 28px;
       margin-bottom: 30px;
-      position: relative;
-      display: inline-block;
+      border-bottom: 2px solid #334155;
+      padding-bottom: 10px;
+      color: #f1f5f9;
     }
 
-    .section-title::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 50%;
-      height: 3px;
-      background: #6366f1;
-      border-radius: 2px;
-    }
-
+    /* Skills Grid */
     .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
     }
 
-    .skill-badge {
+    .skill-card {
       background: #1e293b;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
       border: 1px solid #334155;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      color: #cbd5e1;
+      font-weight: bold;
     }
 
+    /* Projects Grid */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -149,13 +126,10 @@
 
     .project-card {
       background: #1e293b;
-      border: 1px solid #334155;
+      padding: 25px;
       border-radius: 12px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.3s ease;
+      border: 1px solid #334155;
+      transition: transform 0.3s;
     }
 
     .project-card:hover {
@@ -163,14 +137,15 @@
     }
 
     .project-card h3 {
-      font-size: 1.3rem;
+      font-size: 20px;
       margin-bottom: 10px;
+      color: #38bdf8;
     }
 
     .project-card p {
       color: #94a3b8;
-      font-size: 0.95rem;
-      margin-bottom: 20px;
+      font-size: 14px;
+      margin-bottom: 15px;
     }
 
     .tech-tags {
@@ -182,10 +157,10 @@
 
     .tech-tags span {
       background: #334155;
-      font-size: 0.8rem;
+      color: #e2e8f0;
+      font-size: 12px;
       padding: 4px 10px;
-      border-radius: 6px;
-      color: #a5b4fc;
+      border-radius: 20px;
     }
 
     .project-links {
@@ -196,83 +171,94 @@
     .project-links a {
       color: #6366f1;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 14px;
+      font-weight: bold;
     }
 
     .project-links a:hover {
       text-decoration: underline;
     }
 
+    /* Footer */
     footer {
       text-align: center;
       padding: 30px;
-      border-top: 1px solid #334155;
+      background: #1e293b;
       color: #64748b;
-      font-size: 0.9rem;
+      font-size: 14px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="#" class="logo">Zeeshan.dev</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-      </ul>
-    </nav>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Zeeshan.dev</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Hi, I'm <span>Zeeshan Sheikh</span> 👋</h1>
+    <p>Web Developer & BCA Student crafting functional, clean, and responsive web applications.</p>
+    <a href="#projects" class="btn">View My Work</a>
   </header>
 
-  <main>
-    <section class="hero" id="about">
-      <h1>Hi, I'm <span>Zeeshan Sheikh</span> 👋</h1>
-      <p>Passionate Developer building interactive, responsive web applications and digital experiences.</p>
-      <a href="https://github.com/zeeshansheikh8091-max" target="_blank" class="btn">View GitHub Profile</a>
-    </section>
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p style="color: #94a3b8;">
+      I am a passionate Web Developer focused on building clean web applications. Currently practicing frontend technologies, JavaScript concepts, DOM manipulation, and API integrations.
+    </p>
+  </section>
 
-    <section id="skills">
-      <h2 class="section-title">Skills & Tech Stack</h2>
-      <div class="skills-grid">
-        <span class="skill-badge">HTML5</span>
-        <span class="skill-badge">CSS3</span>
-        <span class="skill-badge">JavaScript</span>
-        <span class="skill-badge">Git & GitHub</span>
-        <span class="skill-badge">REST APIs</span>
-        <span class="skill-badge">Responsive Design</span>
-      </div>
-    </section>
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2 class="section-title">Tech Stack</h2>
+    <div class="skills-grid">
+      <div class="skill-card">HTML5</div>
+      <div class="skill-card">CSS3</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">Git</div>
+      <div class="skill-card">GitHub</div>
+      <div class="skill-card">REST APIs</div>
+    </div>
+  </section>
 
-    <section id="projects">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="projects-grid">
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      
+      <!-- QR Code Generator Card -->
+      <div class="project-card">
+        <h3>QR Code Generator 📱</h3>
+        <p>A dynamic web app built with JavaScript and API integration to generate custom QR codes instantly for any URL or text input.</p>
         
-        <!-- QR Code Generator Project -->
-        <div class="project-card">
-          <div>
-            <h3>QR Code Generator 📱</h3>
-            <p>A sleek web application that converts URLs or custom text into QR codes instantly using dynamic API integration.</p>
-            <div class="tech-tags">
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>JavaScript</span>
-              <span>API</span>
-            </div>
-          </div>
-          <div class="project-links">
-            <a href="https://zeeshansheikh8091-max.github.io/qr-generator/" target="_blank">Live Demo 🔗</a>
-            <a href="https://github.com/zeeshansheikh8091-max/qr-generator" target="_blank">Source Code 💻</a>
-          </div>
+        <div class="tech-tags">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>API</span>
         </div>
 
+        <div class="project-links">
+          <a href="https://zeeshansheikh8091-max.github.io/qr-generator/" target="_blank">Live Demo 🔗</a>
+          <a href="https://github.com/zeeshansheikh8091-max/qr-generator" target="_blank">Source Code 💻</a>
+        </div>
       </div>
-    </section>
-  </main>
 
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2026 Zeeshan Sheikh. Built with passion & code.</p>
+    <p>© 2026 Zeeshan Sheikh. Built & Hosted on GitHub Pages.</p>
   </footer>
 
 </body>
